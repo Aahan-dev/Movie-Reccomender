@@ -23,4 +23,36 @@ class MovieRecommendationSystem:
         recommended = [movie['title'] for movie in self.movies if movie['genre'].lower() == genre.lower()]
         return recommended
 
+    def recommend_by_rating(self, min_rating):
+        """
+        Recommend movies that have a rating above the specified minimum rating.
+
+
+        Args:
+            min_rating (float): The minimum rating to filter movies by.
+
+
+        Returns:
+            list: A list of recommended movie titles.
+        """
+        recommended = [movie['title'] for movie in self.movies if movie['rating'] >= min_rating]
+        return recommended
+
+
+    def recommend_by_actor(self, actor):
+        """
+        Recommend movies featuring a specific actor.
+
+
+        Args:
+            actor (str): The actor's name to filter movies by.
+
+
+        Returns:
+            list: A list of recommended movie titles.
+        """
+        recommended = [movie['title'] for movie in self.movies if actor in movie['actors']]
+        return recommended
+
+
     
