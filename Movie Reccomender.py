@@ -55,4 +55,27 @@ class MovieRecommendationSystem:
         return recommended
 
 
-    
+    def run(self):
+        """Run the movie recommendation system."""
+        print("Welcome to the Movie Recommendation System!")
+       
+        while True:
+            print("\nChoose a recommendation method:")
+            print("1. By Genre")
+            print("2. By Minimum Rating")
+            print("3. By Actor")
+            print("4. Exit")
+
+
+
+
+            choice = input("Enter your choice (1-4): ")
+
+
+
+
+            if choice == "1":
+                genre = input("Enter the genre (e.g., Sci-Fi, Drama): ")
+                recommendations = self.recommend_by_genre(genre)
+            elif choice == "2":
+                   
