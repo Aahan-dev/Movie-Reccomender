@@ -78,4 +78,49 @@ class MovieRecommendationSystem:
                 genre = input("Enter the genre (e.g., Sci-Fi, Drama): ")
                 recommendations = self.recommend_by_genre(genre)
             elif choice == "2":
-                   
+                try:
+                    min_rating = float(input("Enter the minimum rating (0-10): "))
+                    recommendations = self.recommend_by_rating(min_rating)
+                except ValueError:
+                    print("Invalid rating. Please enter a number.")
+                    continue
+            elif choice == "3":
+                actor = input("Enter the actor's name: ")
+                recommendations = self.recommend_by_actor(actor)
+            elif choice == "4":
+                print("Exiting the movie recommendation system. Goodbye!")
+                break
+            else:
+                print("Invalid choice. Please select a valid option.")
+                continue
+
+
+
+
+
+
+
+
+            if recommendations:
+                print("Recommended Movies:")
+                for title in recommendations:
+                    print(f"- {title}")
+            else:
+                print("No recommendations found.")
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    # Create an instance of MovieRecommendationSystem and run it
+    movie_recommender = MovieRecommendationSystem()
+    movie_recommender.run()
+                
+                
+                
+                
+                
